@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* CineMatch Brand Colors - HSL format */
+    --background: 0 0% 98%;
+    --foreground: 210 17% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 210 17% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 17% 11%;
+    
+    /* Primary: Deep Blue */
+    --primary: 203 50% 35%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary: Coral Red */
+    --secondary: 6 80% 58%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 210 12% 93%;
+    --muted-foreground: 220 9% 46%;
+    
+    --accent: 39 96% 50%;
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 203 50% 35%;
+    
+    --radius: 0.5rem;
+    
+    /* Cinematic dark tones */
+    --dark-bg: 216 28% 7%;
+    --charcoal: 214 15% 10%;
+    --slate: 215 16% 17%;
+    --steel: 215 14% 34%;
+    
+    /* Accent colors */
+    --gold: 39 96% 50%;
+    --teal: 173 80% 40%;
+    --purple: 258 90% 66%;
+    --green: 158 64% 52%;
+  }
+  
+  .dark {
+    --background: 216 28% 7%;
+    --foreground: 0 0% 98%;
+    
+    --card: 215 16% 17%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 214 15% 10%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 203 50% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 6 80% 58%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 215 16% 17%;
+    --muted-foreground: 220 9% 64%;
+    
+    --accent: 39 96% 50%;
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 215 16% 17%;
+    --input: 215 16% 17%;
+    --ring: 203 50% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+}
+
+/* Import Playfair Display font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+/* Custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out;
+}
