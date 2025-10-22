@@ -35,7 +35,7 @@ const Header = () => {
             Watchlist
           </Link>
           <Link to="/search">
-            <Button variant="ghost" size="icon" className="hover:bg-primary/10">
+            <Button variant="ghost" size="icon" className="hover:bg-primary">
               <Search className="h-5 w-5" />
             </Button>
           </Link>
